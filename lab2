@@ -20,8 +20,9 @@ void sigHupHandler(int sig) {
 }
 
 int main() {
+    int serverSocket, clientSocket;
     // Создание сокета
-    int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     if (serverSocket < 0) {
         perror("socket");
         exit(EXIT_FAILURE);
@@ -68,7 +69,6 @@ int main() {
         FD_ZERO(&fds);
         FD_SET(serverSocket, &fds);
         maxFd = serverSocket;
-        int clientSocket;
 
         // Добавление клиентского сокета, если он есть
         if (clientSocket > 0) {
