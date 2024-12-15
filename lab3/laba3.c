@@ -5,7 +5,7 @@
 MODULE_LICENSE("GPL");  
 
 static int __init tsu_module_init(void) {
-    pr_info("Welcome to the Tomsk State University\n"); 
+    pr_info("Welcome to the Tomsk State University!\n"); 
     return 0;  
 }
 
